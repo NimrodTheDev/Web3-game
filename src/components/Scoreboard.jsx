@@ -4,7 +4,7 @@ function Scoreboard({score}) {
         <div className="scoreBoard_ui">
             <img src={svg}></img>
             <div className="scoreBoardScore">
-                <p>score</p>
+                <p>Sei</p>
                 <span>{score}</span>
             </div>
         </div>
