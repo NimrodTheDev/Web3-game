@@ -37,7 +37,7 @@ const App = () => {
         setValue(newValue);
         localStorage.setItem("value", newValue);
 
-        await fetch("http://sei-server-production.up.railway.app/sendSei", {
+        await fetch("https://sei-server-production.up.railway.app/sendSei", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -52,7 +52,7 @@ const App = () => {
         getBalance();
         return `YOU WIN ${1} sei`;
       } else if (win === "false") {
-        await fetch("http://sei-server-production.up.railway.app/sendSei", {
+        await fetch("https://sei-server-production.up.railway.app/sendSei", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -83,7 +83,7 @@ const App = () => {
     e.preventDefault();
     const mnemonic = e.target[0].value;
 
-    const response = await fetch("http://sei-server-production.up.railway.app/recoverWallet", {
+    const response = await fetch("https://sei-server-production.up.railway.app/recoverWallet", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -108,7 +108,7 @@ const App = () => {
     const addr = localStorage.getItem("address");
     try {
       
-      const data = await fetch(`http://sei-server-production.up.railway.app/getBalance/${addr}`);
+      const data = await fetch(`https://sei-server-production.up.railway.app/getBalance/${addr}`);
       const res = await data.json();
       setBalance(res.balance.amount);
     } catch (error) {
